@@ -4,6 +4,9 @@ import os, subprocess
 from request import file_writer, file_remover
 from insta_profile import profile_downloader, profile_delete
 from qr_generator import generate_qr, delete_qr
+from quotes import preload_quotes, quotes
+from random import randint
+from love_quotes import happy_love_quotes, sad_love_quotes
 
 
 def start(update, context):
@@ -20,6 +23,9 @@ def help(update, context):
     /paste <content> - to push content to paste.rs
     /pic <insta user name> - to download a profile pic of the user
     /qr <link of data> - to generate qr code
+    /quote - for getting random quotes
+    /love_quote_happy - for romantic quotes [happy]
+    /love_quote_sad - for romantic quotes [sad]
     
     """)
 
@@ -59,6 +65,19 @@ def qr(update, context):
         delete_qr()
 
 
+def quote(update, context):
+    preload_quotes()
+    update.message.reply_text(f"{quotes[randint(0, 9)]}")
+
+
+def love_quote_happy(update, context):
+    update.message.reply_text(f"❤️ {happy_love_quotes[randint(0, 22)]}")
+
+
+def love_quote_sad(update, context):
+    update.message.reply_text(f"❤️ {happy_love_quotes[randint(0, 3)]}")
+
+
 updater = telegram.ext.Updater(API_KEY, use_context=True)
 
 disp = updater.dispatcher
@@ -68,7 +87,9 @@ disp.add_handler(telegram.ext.CommandHandler("help", help))
 disp.add_handler(telegram.ext.CommandHandler("paste", paste))
 disp.add_handler(telegram.ext.CommandHandler("pic", pic))
 disp.add_handler(telegram.ext.CommandHandler("qr", qr))
-
+disp.add_handler(telegram.ext.CommandHandler("quote", quote))
+disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
+disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
 
 
 updater.start_polling()

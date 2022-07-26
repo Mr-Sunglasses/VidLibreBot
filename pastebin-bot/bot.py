@@ -3,6 +3,7 @@ import telegram.ext
 import os, subprocess
 from request import file_writer, file_remover
 from insta_profile import profile_downloader, profile_delete
+from qr_generator import generate_qr, delete_qr
 
 
 def start(update, context):
@@ -17,7 +18,8 @@ def help(update, context):
     /start - to say welcome message
     /help - to get help
     /paste <content> - to push content to paste.rs
-    /pic <insta user name> - to download a reels from instagram
+    /pic <insta user name> - to download a profile pic of the user
+    /qr <link of data> - to generate qr code
     
     """)
 
@@ -43,6 +45,18 @@ def pic(update, context):
         profile_delete(username=username)
     except:
         update.message.reply_text(f"{username} is not found")
+        profile_delete(username=username)
+
+
+def qr(update, context):
+    link = context.args[0]
+    try:
+        generate_qr(link=link)
+        context.bot.send_photo(chat_id=update.message.chat_id, photo=open('myqr.png', 'rb'))
+        delete_qr()
+    except:
+        update.message.reply_text(f"QR of this {link} can't be generated")
+        delete_qr()
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)
@@ -53,6 +67,9 @@ disp.add_handler(telegram.ext.CommandHandler("start", start))
 disp.add_handler(telegram.ext.CommandHandler("help", help))
 disp.add_handler(telegram.ext.CommandHandler("paste", paste))
 disp.add_handler(telegram.ext.CommandHandler("pic", pic))
+disp.add_handler(telegram.ext.CommandHandler("qr", qr))
+
+
 
 updater.start_polling()
 updater.idle()

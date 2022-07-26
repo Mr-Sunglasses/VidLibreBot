@@ -1,0 +1,10 @@
+Paste.rs -
+
+    - add an option to delete paste using their id
+
+    - also add a logger to store all the paste generated
+
+
+Reels -
+
+        - reels downloader

@@ -7,7 +7,7 @@ from qr_generator import generate_qr, delete_qr
 from quotes import preload_quotes, quotes
 from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
-
+from bg_remover import bg_remove
 
 def start(update, context):
     update.message.reply_text("Welcome to PasteBin Bot Powered by paste.rs/web")
@@ -78,6 +78,20 @@ def love_quote_sad(update, context):
     update.message.reply_text(f"❤️ {sad_love_quotes[randint(0, 3)]}")
 
 
+def handle_message_text(update, context):
+    update.message.reply_text(f"You said {update.message.text}")
+
+
+def handle_message_photo(update, context):
+    file = update.message.photo[-1].file_id
+    obj = context.bot.get_file(file)
+    obj.download('image.jpg')
+    bg_remove('image.jpg')
+
+    if os.path.exists("person_transp.png"):
+        context.bot.send_photo(chat_id=update.message.chat_id, photo=open('person_transp.png', 'rb'))
+
+
 updater = telegram.ext.Updater(API_KEY, use_context=True)
 
 disp = updater.dispatcher
@@ -90,6 +104,8 @@ disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
+disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message_text))
+disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.photo, handle_message_photo))
 
 if __name__ == "__main__":
     updater.start_polling()

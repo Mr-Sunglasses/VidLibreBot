@@ -77,6 +77,9 @@ def love_quote_happy(update, context):
 def love_quote_sad(update, context):
     update.message.reply_text(f"❤️ {sad_love_quotes[randint(0, 3)]}")
 
+def handle_photo(update, context):
+    pass
+
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)
 

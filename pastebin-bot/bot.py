@@ -91,6 +91,6 @@ disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
 
-
-updater.start_polling()
-updater.idle()
+if __name__ == "__main__":
+    updater.start_polling()
+    updater.idle()

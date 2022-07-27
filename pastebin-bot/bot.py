@@ -7,6 +7,10 @@ from qr_generator import generate_qr, delete_qr
 from quotes import preload_quotes, quotes
 from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
+from image_training import model, x_test, y_test, x_train, y_train, class_name
+from io import BytesIO
+import numpy as np
+import cv2
 
 
 def start(update, context):
@@ -77,8 +81,26 @@ def love_quote_happy(update, context):
 def love_quote_sad(update, context):
     update.message.reply_text(f"❤️ {sad_love_quotes[randint(0, 3)]}")
 
+
+def train(update, context):
+    update.message.reply_text("Training the model")
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
+    model.save('cifar_classifier.model')
+    update.message.reply_text("Done You can now Send a Photo")
+
+
 def handle_photo(update, context):
-    pass
+    file = context.bot.get_file(update.message.photo[-1].file_id)
+    f = BytesIO(file.download_as_bytearray())
+    file_byte = np.asarray(bytearray(f.read()), dtype=np.uint8)
+
+    img = cv2.imdecode(file_byte, cv2.IMREAD_COLOR)
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    img = cv2.resize(img, (32, 32), interpolation=cv2.INTER_AREA)
+
+    prediction = model.predict(np.array([img / 255]))
+    update.message.reply_text(f"In this image I can see {class_name[np.argmax(prediction)]}")
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)
@@ -91,9 +113,10 @@ disp.add_handler(telegram.ext.CommandHandler("paste", paste))
 disp.add_handler(telegram.ext.CommandHandler("pic", pic))
 disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
+disp.add_handler(telegram.ext.CommandHandler("train", train))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
+disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.photo, handle_photo))
 
-if __name__ == "__main__":
-    updater.start_polling()
-    updater.idle()
+updater.start_polling()
+updater.idle()

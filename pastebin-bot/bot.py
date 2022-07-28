@@ -61,7 +61,7 @@ def pic(update, context):
                 if os.path.splitext(file)[1].lower() in ('.jpg', '.jpeg'):
                     context.bot.send_photo(chat_id=update.message.chat_id,
                                            photo=open(f'{os.path.join(root, file)}', 'rb'))
-        profile_delete(username=username)
+                    profile_delete(username=username)
     except:
         update.message.reply_text(f"{username} is not found")
 

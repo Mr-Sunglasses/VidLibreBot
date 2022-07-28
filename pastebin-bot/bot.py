@@ -36,6 +36,7 @@ def help(update, context):
     /quote - for getting random quotes
     /love_quote_happy - for romantic quotes [happy]
     /love_quote_sad - for romantic quotes [sad]
+    /yt <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
     
     """)
 
@@ -93,6 +94,7 @@ def video_download_yt(update, context):
     try:
         download_video(link_video)
         title_video = get_title(link_video)
+        update.message.reply_text("Please wait while the Video is Downloading")
         context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'), supports_streaming=True)
         if os.path.exists(f"{title_video}.mp4"):
             os.remove(f"{title_video}.mp4")

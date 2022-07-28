@@ -92,7 +92,7 @@ def love_quote_sad(update, context):
 def video_download_yt(update, context):
     link_video = context.args[0]
     try:
-        update.message.reply_text("Please wait while the Video is Downloading")
+        update.message.reply_text("Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
         download_video(link_video)
         title_video = get_title(link_video)
         context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'), supports_streaming=True)

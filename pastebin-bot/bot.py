@@ -92,9 +92,9 @@ def love_quote_sad(update, context):
 def video_download_yt(update, context):
     link_video = context.args[0]
     try:
+        update.message.reply_text("Please wait while the Video is Downloading")
         download_video(link_video)
         title_video = get_title(link_video)
-        # update.message.reply_text("Please wait while the Video is Downloading")
         context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'), supports_streaming=True)
         if os.path.exists(f"{title_video}.mp4"):
             os.remove(f"{title_video}.mp4")

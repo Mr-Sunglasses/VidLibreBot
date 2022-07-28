@@ -10,10 +10,6 @@ from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
 
 
-# /love_quote_happy - for romantic quotes [happy]
-# /love_quote_sad - for romantic quotes [sad]
-
-
 def handle_message(update, context):
     user_first_name = update.message.chat.first_name
     user_last_name = update.message.chat.last_name
@@ -38,6 +34,8 @@ def help(update, context):
     /pic <insta user name> - to download a profile pic of the user
     /qr <link of data> - to generate qr code
     /quote - for getting random quotes
+    /love_quote_happy - for romantic quotes [happy]
+    /love_quote_sad - for romantic quotes [sad]
     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
     
     """)

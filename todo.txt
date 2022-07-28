@@ -11,3 +11,5 @@ Reels -
 
 
 Most Important - Dockerize the app.......
+
+Add a feature to view last posts of a public profile

@@ -36,7 +36,7 @@ def help(update, context):
     /quote - for getting random quotes
     /love_quote_happy - for romantic quotes [happy]
     /love_quote_sad - for romantic quotes [sad]
-    /yt <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
+    /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
     
     """)
 
@@ -118,7 +118,7 @@ disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
-disp.add_handler(telegram.ext.CommandHandler("yt", video_download_yt))
+disp.add_handler(telegram.ext.CommandHandler("yt_dl", video_download_yt))
 disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 
 if __name__ == "__main__":

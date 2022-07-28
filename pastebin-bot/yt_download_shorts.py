@@ -16,15 +16,17 @@
 #     return best.title
 
 from pytube import YouTube
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def download_video(link_of_video):
     url = link_of_video
 
     myvideo = YouTube(url)
 
-    download = myvideo.streams.get_by_resolution()
+    download = myvideo.streams.get_highest_resolution()
 
-    download.download()
+    download.download(filename='output.mp4')
 
 def get_title(link_of_video):
     url = link_of_video

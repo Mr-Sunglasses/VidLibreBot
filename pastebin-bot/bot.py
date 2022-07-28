@@ -7,7 +7,7 @@ from qr_generator import generate_qr, delete_qr
 from quotes import preload_quotes, quotes
 from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
-from yt_download_shorts import download_video
+from yt_download_shorts import download_video, get_title
 
 
 def handle_message(update, context):
@@ -92,11 +92,16 @@ def video_download_yt(update, context):
     link_video = context.args[0]
     try:
         download_video(link_video)
+        title_video = get_title(link_video)
+        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'), supports_streaming=True)
+        if os.path.exists(f"{title_video}.mp4"):
+            os.remove(f"{title_video}.mp4")
+    except:
+        context.bot.reply_text(f"{link_video} is not Found")
 
 
-    context.bot.send_video(chat_id=update.message.chat_id, video=open(
-        'Kunal Kushwaha Sigma Grindset  StriverRider bUttkarsh Gupta Love Tabbar Nishant Chabbar shorts.3gpp', 'rb'),
-                           supports_streaming=True)
+
+
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)
@@ -111,7 +116,7 @@ disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
-disp.add_handler(telegram.ext.CommandHandler("sigma_kunal", sigma_kunal))
+disp.add_handler(telegram.ext.CommandHandler("yt", video_download_yt))
 disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 
 if __name__ == "__main__":

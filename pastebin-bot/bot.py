@@ -37,7 +37,6 @@ def help(update, context):
     /love_quote_happy - for romantic quotes [happy]
     /love_quote_sad - for romantic quotes [sad]
     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
-    
     """)
 
 

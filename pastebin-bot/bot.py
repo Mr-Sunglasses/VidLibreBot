@@ -97,7 +97,7 @@ def video_download_yt(update, context):
         if os.path.exists(f"{title_video}.mp4"):
             os.remove(f"{title_video}.mp4")
     except:
-        context.bot.reply_text(f"{link_video} is not Found")
+        update.message.reply_text(f"{link_video} is not Found")
 
 
 

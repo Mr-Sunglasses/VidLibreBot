@@ -8,7 +8,7 @@ from quotes import preload_quotes, quotes
 from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
-
+import instaloader
 
 def handle_message(update, context):
     user_first_name = update.message.chat.first_name
@@ -52,6 +52,7 @@ def paste(update, context):
 def pic(update, context):
     username = context.args[0]
     try:
+        update.message.reply_text(f"Please wait while we are sending you the profile pic of {username} \n Don't worry it will take a minute or so 🤝")
         profile_downloader(username=username)
         for root, subdirs, files in os.walk(username):
             for file in files:
@@ -59,7 +60,7 @@ def pic(update, context):
                     context.bot.send_photo(chat_id=update.message.chat_id,
                                            photo=open(f'{os.path.join(root, file)}', 'rb'))
                     profile_delete(username=username)
-    except:
+    except :
         update.message.reply_text(f"{username} is not found")
 
 
@@ -93,13 +94,16 @@ def video_download_yt(update, context):
         update.message.reply_text(
             "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
         download_video(link_video)
-        title_video = get_title(link_video)
-        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'),
+        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"output.mp4", 'rb'),
                                supports_streaming=True)
-        if os.path.exists(f"{title_video}.mp4"):
-            os.remove(f"{title_video}.mp4")
-    except:
+        if os.path.exists(f"output.mp4"):
+            os.remove(f"output.mp4")
+    except instaloader.ProfileNotExistsException:
         update.message.reply_text(f"{link_video} is not Found")
+    except instaloader.ConnectionException:
+        update.message.reply_text("IP is Blocked Please Try After Some Time")
+
+
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)

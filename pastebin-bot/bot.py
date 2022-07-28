@@ -7,10 +7,20 @@ from qr_generator import generate_qr, delete_qr
 from quotes import preload_quotes, quotes
 from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
+from yt_download_shorts import download_video
+
+
+def handle_message(update, context):
+    user_first_name = update.message.chat.first_name
+    user_last_name = update.message.chat.last_name
+    username = update.message.chat.username
+    update.message.reply_text(
+        f"Hey👋 {user_first_name} {user_last_name} aka @{username} welcome to the Open-Bot type: /help to explore options.")
 
 
 def start(update, context):
-    update.message.reply_text("Welcome to PasteBin Bot Powered by paste.rs/web")
+    update.message.reply_text("Welcome to Open-Bot Powered by Open-Source and Developed by @thisiskanishkP")
+    context.bot.send_photo(chat_id=update.message.chat_id, photo=open('images/octocat.png', 'rb'))
 
 
 def help(update, context):
@@ -78,6 +88,17 @@ def love_quote_sad(update, context):
     update.message.reply_text(f"❤️ {sad_love_quotes[randint(0, 3)]}")
 
 
+def video_download_yt(update, context):
+    link_video = context.args[0]
+    try:
+        download_video(link_video)
+
+
+    context.bot.send_video(chat_id=update.message.chat_id, video=open(
+        'Kunal Kushwaha Sigma Grindset  StriverRider bUttkarsh Gupta Love Tabbar Nishant Chabbar shorts.3gpp', 'rb'),
+                           supports_streaming=True)
+
+
 updater = telegram.ext.Updater(API_KEY, use_context=True)
 
 disp = updater.dispatcher
@@ -90,6 +111,8 @@ disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_sad", love_quote_sad))
+disp.add_handler(telegram.ext.CommandHandler("sigma_kunal", sigma_kunal))
+disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 
 if __name__ == "__main__":
     updater.start_polling()

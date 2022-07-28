@@ -10,6 +10,10 @@ from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
 
 
+# /love_quote_happy - for romantic quotes [happy]
+# /love_quote_sad - for romantic quotes [sad]
+
+
 def handle_message(update, context):
     user_first_name = update.message.chat.first_name
     user_last_name = update.message.chat.last_name
@@ -34,8 +38,6 @@ def help(update, context):
     /pic <insta user name> - to download a profile pic of the user
     /qr <link of data> - to generate qr code
     /quote - for getting random quotes
-    /love_quote_happy - for romantic quotes [happy]
-    /love_quote_sad - for romantic quotes [sad]
     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
     
     """)
@@ -90,21 +92,18 @@ def love_quote_sad(update, context):
 
 
 def video_download_yt(update, context):
-
     link_video = context.args[0]
     try:
-        update.message.reply_text("Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
+        update.message.reply_text(
+            "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
         download_video(link_video)
         title_video = get_title(link_video)
-        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'), supports_streaming=True)
+        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"{title_video}.mp4", 'rb'),
+                               supports_streaming=True)
         if os.path.exists(f"{title_video}.mp4"):
             os.remove(f"{title_video}.mp4")
     except:
         update.message.reply_text(f"{link_video} is not Found")
-
-
-
-
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)

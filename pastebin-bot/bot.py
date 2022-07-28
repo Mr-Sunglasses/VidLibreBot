@@ -64,7 +64,6 @@ def pic(update, context):
         profile_delete(username=username)
     except:
         update.message.reply_text(f"{username} is not found")
-        profile_delete(username=username)
 
 
 def qr(update, context):

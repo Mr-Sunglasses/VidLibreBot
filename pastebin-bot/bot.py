@@ -90,7 +90,10 @@ def love_quote_sad(update, context):
 
 
 def video_download_yt(update, context):
-    link_video = context.args[0]
+    try:
+        link_video = context.args[0]
+    except:
+        print("Link is not Found")
     try:
         update.message.reply_text("Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
         download_video(link_video)

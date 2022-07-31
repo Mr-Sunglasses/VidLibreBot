@@ -3,13 +3,14 @@ import threading
 
 import requests
 from random import randint
+
 api = "http://api.quotable.io/random"
 quotes = []
 quote_number = 0
 
+
 def preload_quotes():
     global quotes
-
 
     for x in range(10):
         randon_quote = requests.get(api).json()
@@ -17,6 +18,7 @@ def preload_quotes():
         author = randon_quote["author"]
         quote = content + "\n\n" + "By" + author
         quotes.append(quote)
+
 
 # preload_quotes()
 #
@@ -32,4 +34,3 @@ def preload_quotes():
 #      if quotes[quote_number] == quotes[-3]:
 #          thread = threading.Thread(target=preload_quotes)
 #          thread.start()
-

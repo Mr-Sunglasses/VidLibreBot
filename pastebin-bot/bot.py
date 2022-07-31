@@ -10,21 +10,28 @@ from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
 import instaloader
 
+
 def handle_message(update, context):
     user_first_name = update.message.chat.first_name
     user_last_name = update.message.chat.last_name
     username = update.message.chat.username
     update.message.reply_text(
-        f"Hey👋 {user_first_name} {user_last_name} aka @{username} welcome to the Open-Bot type: /help to explore options.")
+        f"Hey👋 {user_first_name} {user_last_name} aka @{username} welcome to the Open-Bot type: /help to explore options."
+    )
 
 
 def start(update, context):
-    update.message.reply_text("Welcome to Open-Bot Powered by Open-Source and Developed by @thisiskanishkP")
-    context.bot.send_photo(chat_id=update.message.chat_id, photo=open('images/octocat.png', 'rb'))
+    update.message.reply_text(
+        "Welcome to Open-Bot Powered by Open-Source and Developed by @thisiskanishkP"
+    )
+    context.bot.send_photo(
+        chat_id=update.message.chat_id, photo=open("images/octocat.png", "rb")
+    )
 
 
 def help(update, context):
-    update.message.reply_text("""
+    update.message.reply_text(
+        """
     
     The Following Commands can we user
     
@@ -37,14 +44,17 @@ def help(update, context):
     /love_quote_happy - for romantic quotes [happy]
     /love_quote_sad - for romantic quotes [sad]
     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
-    """)
+    """
+    )
 
 
 def paste(update, context):
     data = context.args[::]
-    listToStr = ' '.join(map(str, data))
+    listToStr = " ".join(map(str, data))
     file_writer(text=listToStr)
-    output = subprocess.check_output('curl --data-binary @file.txt https://paste.rs/', shell=True)
+    output = subprocess.check_output(
+        "curl --data-binary @file.txt https://paste.rs/", shell=True
+    )
     update.message.reply_text(f"{output.decode('utf-8')}")
     file_remover()
 
@@ -52,15 +62,19 @@ def paste(update, context):
 def pic(update, context):
     username = context.args[0]
     try:
-        update.message.reply_text(f"Please wait while we are sending you the profile pic of {username} \n Don't worry it will take a minute or so 🤝")
+        update.message.reply_text(
+            f"Please wait while we are sending you the profile pic of {username} \n Don't worry it will take a minute or so 🤝"
+        )
         profile_downloader(username=username)
         for root, subdirs, files in os.walk(username):
             for file in files:
-                if os.path.splitext(file)[1].lower() in ('.jpg', '.jpeg'):
-                    context.bot.send_photo(chat_id=update.message.chat_id,
-                                           photo=open(f'{os.path.join(root, file)}', 'rb'))
+                if os.path.splitext(file)[1].lower() in (".jpg", ".jpeg"):
+                    context.bot.send_photo(
+                        chat_id=update.message.chat_id,
+                        photo=open(f"{os.path.join(root, file)}", "rb"),
+                    )
                     profile_delete(username=username)
-    except :
+    except:
         update.message.reply_text(f"{username} is not found")
 
 
@@ -68,7 +82,9 @@ def qr(update, context):
     link = context.args[0]
     try:
         generate_qr(link=link)
-        context.bot.send_photo(chat_id=update.message.chat_id, photo=open('myqr.png', 'rb'))
+        context.bot.send_photo(
+            chat_id=update.message.chat_id, photo=open("myqr.png", "rb")
+        )
         delete_qr()
     except:
         update.message.reply_text(f"QR of this {link} can't be generated")
@@ -92,18 +108,20 @@ def video_download_yt(update, context):
     link_video = context.args[0]
     try:
         update.message.reply_text(
-            "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
+            "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏"
+        )
         download_video(link_video)
-        context.bot.send_video(chat_id=update.message.chat_id, video=open(f"output.mp4", 'rb'),
-                               supports_streaming=True)
+        context.bot.send_video(
+            chat_id=update.message.chat_id,
+            video=open(f"output.mp4", "rb"),
+            supports_streaming=True,
+        )
         if os.path.exists(f"output.mp4"):
             os.remove(f"output.mp4")
     except instaloader.ProfileNotExistsException:
         update.message.reply_text(f"{link_video} is not Found")
     except instaloader.ConnectionException:
         update.message.reply_text("IP is Blocked Please Try After Some Time")
-
-
 
 
 updater = telegram.ext.Updater(API_KEY, use_context=True)

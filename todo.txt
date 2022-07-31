@@ -13,3 +13,4 @@ Reels -
 Most Important - Dockerize the app.......
 
 Add a feature to view last posts of a public profile
+add feature to store session id to resist ip blocks

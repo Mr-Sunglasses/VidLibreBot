@@ -5,11 +5,104 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4486ee20-f3ca-4e51-aeb7-cc1851e7cc4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pastebin-bot/insta_profile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pastebin-bot/love_quotes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pastebin-bot/qr_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pastebin-bot/quotes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2021-12-24_19-47-01_UTC_profile_pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-14_16-09-00_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-14_16-09-00_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-14_16-09-00_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-22_19-11-55_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-22_19-11-55_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-30_17-40-43_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-30_17-40-43_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-05-30_17-40-43_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-06_19-40-21_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-06_19-40-21_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-08_15-24-47_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-08_15-24-47_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-15_16-35-39_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-15_16-35-39_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-15_16-35-39_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-19_11-51-53_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-19_11-51-53_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-21_07-07-17_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-21_07-07-17_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-21_20-36-19_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-21_20-36-19_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-23_12-41-14_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-23_12-41-14_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-23_12-41-14_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-25_20-31-42_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-25_20-31-42_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-25_20-31-42_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_10-02-32_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_10-02-32_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_10-02-32_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_19-10-44_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_19-10-44_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-26_19-10-44_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_00-20-45_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_00-20-45_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_00-20-45_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_14-48-54_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_14-48-54_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_14-48-54_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_20-04-23_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_20-04-23_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-27_20-04-23_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_12-18-50_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_12-18-50_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_12-18-50_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_18-13-02_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_18-13-02_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-28_18-13-02_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-29_13-21-24_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-29_13-21-24_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-29_13-21-24_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_10-18-10_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_10-18-10_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_10-18-10_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_20-43-43_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_20-43-43_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_20-43-43_UTC.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-06-30_20-43-43_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-01_19-56-39_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-01_19-56-39_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-01_19-56-39_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-02_20-02-12_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-02_20-02-12_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-02_20-02-12_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-03_15-05-59_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-03_15-05-59_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-03_15-05-59_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-04_12-24-49_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-04_12-24-49_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-04_12-24-49_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-09_13-00-56_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-09_13-00-56_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-09_13-00-56_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-11_20-19-23_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-11_20-19-23_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-11_20-19-23_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-17_11-58-28_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-17_11-58-28_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-17_11-58-28_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-18_16-31-39_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-18_16-31-39_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-18_16-31-39_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-19_21-04-39_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-19_21-04-39_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-19_21-04-39_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-23_10-55-26_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-23_10-55-26_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-23_10-55-26_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-27_17-12-06_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-27_17-12-06_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-07-27_17-12-06_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-08-04_10-47-08_UTC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-08-04_10-47-08_UTC.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/2022-08-04_10-47-08_UTC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/aesthetic_.girl_.1_50983365816.json.xz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/aesthetic_.girl_.1/id" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pastebin-bot/insta_all_pictures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pastebin-bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pastebin-bot/bot.py" afterDir="false" />
     </list>
@@ -49,7 +142,8 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -57,11 +151,12 @@
       <recent name="$PROJECT_DIR$/pastebin-bot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pastebin-bot/images" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.bot">
-    <configuration name="API" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bg_remover" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Open_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,7 +169,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pastebin-bot/API.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pastebin-bot/bg_remover.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,7 +222,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="love_quotes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Open_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -135,12 +230,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pastebin-bot" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pastebin-bot/love_quotes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,7 +244,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="quotes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="yt_download_shorts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Open_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -162,7 +257,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pastebin-bot/quotes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pastebin-bot/yt_download_shorts.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,10 +269,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.bot" />
-        <item itemvalue="Python.quotes" />
-        <item itemvalue="Python.love_quotes" />
         <item itemvalue="Python.insta_profile" />
-        <item itemvalue="Python.API" />
+        <item itemvalue="Python.yt_download_shorts" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.bg_remover" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +285,19 @@
       <option name="presentableId" value="Default" />
       <updated>1658833463732</updated>
       <workItem from="1658833465970" duration="4362000" />
-      <workItem from="1658837978857" duration="29548000" />
+      <workItem from="1658837978857" duration="34647000" />
+      <workItem from="1658939737583" duration="2800000" />
+      <workItem from="1658996994003" duration="7807000" />
+      <workItem from="1659010847078" duration="1166000" />
+      <workItem from="1659012142634" duration="210000" />
+      <workItem from="1659012519402" duration="437000" />
+      <workItem from="1659012960866" duration="7177000" />
+      <workItem from="1659020597580" duration="7300000" />
+      <workItem from="1659102618978" duration="3000" />
+      <workItem from="1659108062614" duration="1733000" />
+      <workItem from="1659209489045" duration="1679000" />
+      <workItem from="1659269718650" duration="29000" />
+      <workItem from="1659716096491" duration="3886000" />
     </task>
     <servers />
   </component>
@@ -211,10 +318,14 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Open_bot$request.coverage" NAME="request Coverage Results" MODIFIED="1658839769441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
     <SUITE FILE_PATH="coverage/Open_bot$love_quotes.coverage" NAME="love_quotes Coverage Results" MODIFIED="1658869272879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
+    <SUITE FILE_PATH="coverage/Open_bot$insta_profile.coverage" NAME="insta_profile Coverage Results" MODIFIED="1659039084811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
     <SUITE FILE_PATH="coverage/Open_bot$test_reels.coverage" NAME="insta_profile Coverage Results" MODIFIED="1658849787778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
     <SUITE FILE_PATH="coverage/Open_bot$API.coverage" NAME="API Coverage Results" MODIFIED="1658840540385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
+    <SUITE FILE_PATH="coverage/Open_bot$yt_download_shorts.coverage" NAME="yt_download_shorts Coverage Results" MODIFIED="1659014036586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
     <SUITE FILE_PATH="coverage/Open_bot$commands.coverage" NAME="commands Coverage Results" MODIFIED="1658836242864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot" />
+    <SUITE FILE_PATH="coverage/Open_bot$bg_remover.coverage" NAME="bg_remover Coverage Results" MODIFIED="1658936289297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
+    <SUITE FILE_PATH="coverage/Open_bot$test.coverage" NAME="test Coverage Results" MODIFIED="1658998703722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Open_bot$quotes.coverage" NAME="quotes Coverage Results" MODIFIED="1658869863349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
-    <SUITE FILE_PATH="coverage/Open_bot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1658869973967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
+    <SUITE FILE_PATH="coverage/Open_bot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1659719720828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pastebin-bot" />
   </component>
 </project>

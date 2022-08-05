@@ -9,6 +9,8 @@ from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
 import instaloader
+from insta_all_pictures import download_images_all, profile_delete_from_storage
+import glob
 
 
 def handle_message(update, context):
@@ -39,6 +41,7 @@ def help(update, context):
     /help - to get help
     /paste <content> - to push content to paste.rs
     /pic <insta user name> - to download a profile pic of the user
+    /insta_pic <insta username of your> <insta password your> <user name of the person you want to download all images> - To download all timeline images of a person
     /qr <link of data> - to generate qr code
     /quote - for getting random quotes
     /love_quote_happy - for romantic quotes [happy]
@@ -76,6 +79,48 @@ def pic(update, context):
                     profile_delete(username=username)
     except:
         update.message.reply_text(f"{username} is not found")
+
+
+def insta_pic(update, context):
+    data = context.args[0:4]
+    username = data[0]
+    print(username)
+    password = data[1]
+    print(password)
+    insta_user_name = data[2]
+    print(insta_user_name)
+
+    update.message.reply_text(
+        f"Please wait while we are sending you the all the images of {insta_user_name} \n Don't worry it will take a minute or so 🤝"
+    )
+    # name = "aesthetic_.girl_.1"
+    # try:
+    download_images_all(Username=username, Passoword=password, Insta_profile=insta_user_name)
+    for root, subdirs, files in os.walk(username):
+        for file in files:
+            if os.path.splitext(file)[1].lower() in (".jpg", ".jpeg"):
+                context.bot.send_photo(
+                    chat_id=update.message.chat_id,
+                    photo=open(f"{os.path.join(root, file)}", "rb"),
+                )
+        # profile_delete_from_storage(insta_user_name)
+    # except:
+    #     update.message.reply_text(
+    #              f"{insta_user_name} is Private or your credentials are wrong"
+    #         )
+    # try:
+    # download_images_all(Username=username, Passoword=password, Insta_profile=insta_user_name)
+    # for filename in glob.iglob(insta_user_name + '**/*.jpg', recursive=True):
+    #     context.bot.send_photo(
+    #         chat_id=update.message.chat_id,
+    #         photo=open(f"{os.path.join(insta_user_name, filename)}", "rb"),
+    #     )
+    # profile_delete_from_storage(insta_user_name)
+
+    # except:
+    #     update.message.reply_text(
+    #         f"{insta_user_name} is Private or your credentials are wrong"
+    #     )
 
 
 def qr(update, context):
@@ -132,6 +177,7 @@ disp.add_handler(telegram.ext.CommandHandler("start", start))
 disp.add_handler(telegram.ext.CommandHandler("help", help))
 disp.add_handler(telegram.ext.CommandHandler("paste", paste))
 disp.add_handler(telegram.ext.CommandHandler("pic", pic))
+disp.add_handler(telegram.ext.CommandHandler("insta_pic", insta_pic))
 disp.add_handler(telegram.ext.CommandHandler("qr", qr))
 disp.add_handler(telegram.ext.CommandHandler("quote", quote))
 disp.add_handler(telegram.ext.CommandHandler("love_quote_happy", love_quote_happy))

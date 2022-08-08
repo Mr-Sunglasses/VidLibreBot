@@ -1,55 +1,57 @@
-  ==BROWSER USAGE==
+###BROWSER USAGE
 
-      https://paste.rs/web
+https://paste.rs/web
 
-  ==API USAGE==
-      
-      POST https://paste.rs/
+###API USAGE
+`POST https://paste.rs/`
 
-          Send the raw data along. Will respond with a link to the paste.
+Send the raw data along. Will respond with a link to the paste.
 
-          If the response code is 201 (CREATED), then the entire paste was
-          uploaded. If the response is 206 (PARTIAL), then the paste exceeded
-          the server's maximum upload size, and only part of the paste was
-          uploaded. If the response code is anything else, an error has
-          occurred. Pasting is heavily rate limited.
+- **Response code 201 (Created)**
+The entire paste was uploaded.
+- **Response code 206 (Partial)**
+The paste exceeded the maximum upload size, only part of the paste was uploaded.
+- **Other response codes**
+An error occurred.
 
-      GET https://paste.rs/<id>
+Pasting is heavily rate limited.
 
-          Retrieve the paste with the given id as plain-text.
+---
+`GET https://paste.rs/<id>`
 
-      GET https://paste.rs/<id>.<ext>
+Retrieve the paste with the given id as plain-text.
 
-          Retrieve the paste with the given id. If ext is a known code file
-          extension, the paste is syntax highlighted and returned as HTML. If
-          ext is a known file extension, the paste is returned with the
-          extension's corresponding Content-Type. Otherwise, the paste is
-          returned as plain text.
+---
 
-      DELETE https://paste.rs/<id>
+`GET https://paste.rs/<id>.<ext>`
 
-          Delete the paste with the given id.
+Retrieve the paste with the given id. If ext is a known code file extension, the paste is syntax highlighted and returned as HTML. If ext is a known file extension, the paste is returned with the extension's corresponding Content-Type. Otherwise, the paste is returned as plain text.
 
-  ==EXAMPLES==
+---
 
-      Paste a file named 'file.txt' using PowerShell:
+`DELETE https://paste.rs/<id>`
 
-          Invoke-RestMethod -Uri "https://paste.rs" -Method Post -InFile .\file.txt
+Delete the paste with the given id.
 
-      Paste from stdin using PowerShell:
+###Examples
 
-          echo "Hi!" | Invoke-RestMethod -Uri "https://paste.rs" -Method Post
+- **Paste a file named 'file.txt' using PowerShell:**
 
-      Delete an existing paste with id <id> using PowerShell:
+`Invoke-RestMethod -Uri "https://paste.rs" -Method Post -InFile .\file.txt`
 
-          Invoke-RestMethod -Uri "https://paste.rs/<id>" -Method Delete
+- **Paste from stdin using PowerShell:**
 
-      A PowerShell function that can be used for quick pasting from the
-      command line. The command takes a filename or reads from stdin if none was
-      supplied and outputs the URL of the paste to stdout: `Paste file.txt` or
-      `echo "hi" | Paste`.
+`echo "Hi!" | Invoke-RestMethod -Uri "https://paste.rs" -Method Post`
 
-          function Paste([string]$file) {
+- **Delete an existing paste with id <id> using PowerShell:**
+
+`Invoke-RestMethod -Uri "https://paste.rs/<id>" -Method Delete`
+
+- **A PowerShell function that can be used for quick pasting from the command line. The command takes a filename or reads from stdin if none was supplied and outputs the URL of the paste to stdout: 'Paste file.txt' or 'echo hi" | Paste'.**
+
+```
+function Paste([string]$file) {
               $Data = if ($file) {Get-Content $file} else {$input}
               Invoke-RestMethod -Uri "https://paste.rs" -Method Post -Body $Data
           }
+```

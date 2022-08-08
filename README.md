@@ -1,8 +1,8 @@
-#BROWSER USAGE#
+### BROWSER USAGE
 
 https://paste.rs/web
 
-###API USAGE###
+### API USAGE
 `POST https://paste.rs/`
 
 Send the raw data along. Will respond with a link to the paste.
@@ -33,7 +33,7 @@ Retrieve the paste with the given id. If ext is a known code file extension, the
 
 Delete the paste with the given id.
 
-#Examples#
+### Examples
 
 - **Paste a file named 'file.txt' using PowerShell:**
 

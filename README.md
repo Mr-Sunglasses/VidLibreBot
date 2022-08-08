@@ -1,12 +1,10 @@
-  BROWSER USAGE
+  ==BROWSER USAGE==
 
       https://paste.rs/web
 
-  API USAGE
+  ==API USAGE==
       
-      ´´´
       POST https://paste.rs/
-      ´´´
 
           Send the raw data along. Will respond with a link to the paste.
 
@@ -32,7 +30,7 @@
 
           Delete the paste with the given id.
 
-  EXAMPLES
+  ==EXAMPLES==
 
       Paste a file named 'file.txt' using PowerShell:
 

@@ -3,8 +3,10 @@
       https://paste.rs/web
 
   API USAGE
-
+      
+      ~~~
       POST https://paste.rs/
+      ~~~
 
           Send the raw data along. Will respond with a link to the paste.
 

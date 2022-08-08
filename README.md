@@ -7,11 +7,11 @@ https://paste.rs/web
 
 Send the raw data along. Will respond with a link to the paste.
 
-- **Response code 201 (Created)**
+- **Response code 201 (Created):**
 The entire paste was uploaded.
-- **Response code 206 (Partial)**
+- **Response code 206 (Partial):**
 The paste exceeded the maximum upload size, only part of the paste was uploaded.
-- **Other response codes**
+- **Other response codes:**
 An error occurred.
 
 Pasting is heavily rate limited.

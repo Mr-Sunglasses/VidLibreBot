@@ -1,17 +1,15 @@
+import json
+import os
+from dotenv import load_dotenv
 from firebase_admin import db
 import pyrebase
 
-firebaseConfig = {
-    "apiKey": "-----------------------------------",
-    "authDomain": "-----------------------------------",
-    "databaseURL": "-----------------------------------",
-    "projectId": "-----------------------------------",
-    "storageBucket": "-----------------------------------",
-    "messagingSenderId": "-----------------------------------",
-    "appId": "-----------------------------------",
-    "serviceAccount": "-----------------------------------",
-    "measurementId": "-----------------------------------"
-}
+load_dotenv()
+
+
+serviceAccountKey = json.loads(os.getenv("SERVICE_ACCOUNT_KEY"))
+firebaseConfig = json.loads(os.getenv("FIREBASE_CONFIG"))
+firebaseConfig ["serviceAccount"] = serviceAccountKey
 
 
 
@@ -28,13 +26,23 @@ User_data = [{
 User_idToken = ''
 links = {}
 
+def reomve_special_char(s):
+    spcl = "!@$%^&()}{][';:-+=_.//\\?>.`~"
+    ans =''
+    for i in list(s):
+        if i in spcl:
+            pass
+        else:
+            ans+=i
+    return ans
 
 def update_user_data(name , email , links={} ):
+    global User_idToken
     for i in links:
         User_data[0]['links'][i] = links[i]
     User_data[0]['email'] = email
     User_data[0]['name'] = name
-
+    User_idToken = reomve_special_char(email)
 
 
 
@@ -64,15 +72,7 @@ def remove_spaces_from_string(s):
         s+=i
     return s
 
-def reomve_special_char(s):
-    spcl = "!@$%^&()}{][';:-+=_.//\\?>.`~"
-    ans =''
-    for i in list(s):
-        if i in spcl:
-            pass
-        else:
-            ans+=i
-    return ans
+
 
 def get_data():
     global User_email,User_idToken,User_name,User_data
@@ -89,7 +89,7 @@ def get_links():
 
 
 def commit_database():
-    global  User_data
+    global  User_data,User_idToken
     try:
         pyrDB.child(User_idToken).set(User_data)
         return True
@@ -98,8 +98,10 @@ def commit_database():
         return False
 
 
-def SignIn(Uemail,Upass):
-    global User_email,User_name,User_idToken,User_data
+def SignIn():
+    global User_idToken,User_data
+    Uemail = input("Email : ")
+    Upass = input("Password : ")
     try:
         u = firebase.auth().sign_in_with_email_and_password(Uemail.strip(),Upass)
         User_idToken = reomve_special_char(u['email'])
@@ -115,20 +117,20 @@ def SignIn(Uemail,Upass):
             input()
 
 def SignUp():
-    global User_email,User_name,User_idToken
+    global User_idToken,User_data
     give_space()
     while True:
         name = input("Full Name : ").strip()
         email = input("Email : ").strip()
         passwd = input("Password : ")
         cpasswd = input("Confirm Password : ")
-        User_email = email
         try:
             if len(email) and passwd == cpasswd and len(passwd)>7:
+                res =firebase.auth().create_user_with_email_and_password(email,passwd)
                 update_user_data(name,email)
                 commit_database()
-                User_idToken = reomve_special_char(email)
-                return firebase.auth().create_user_with_email_and_password(email,passwd)
+                print(User_data)
+                return res
             else:
                 give_space()
                 print("Enter the cradentials prperly !!")
@@ -165,8 +167,8 @@ def save_link():
     else:
         give_space()
         print("Something went wrong whiling saving the data !! (Try again by using another name of the link)")
-    ipnut()
-
+    give_space()
+    input()
 def delete_data():
     global User_data
     get_links()
@@ -184,11 +186,14 @@ def delete_data():
             print("Given name doesn't exist !")
 
 def change_details():
+    global User_data
     passwd = input("Enter password to verify : ")
     try: 
-        firebase.auth().sign_in_with_email_and_password(Uemail.strip(),Upass)
+        firebase.auth().sign_in_with_email_and_password(User_data[0]["email"],passwd)
         name = input("Enter your name : ")
         email = input("Enter you Email : ")
+        update_user_data(name,email)
+        commit_database()
     except Exception as e:
         if(str(type(e)) == "<class 'requests.exceptions.HTTPError'>"):
             give_space()
@@ -200,9 +205,10 @@ def change_details():
             input()
 
 def clear_all_link():
+    global User_data,links
     give_space()
-    for i in User_data[0]['links']:
-        User_data[0]['links'].pop(i)
+    links = {}
+    User_data[0]['links'] = links
     if commit_database():
         print("Deleted all saved linkes successfully !!")
     else:
@@ -227,8 +233,6 @@ def init():
                 delete_data()
             elif ch=='4':
                 clear_all_link()
-            # elif ch=='5':
-            #     change_details()
             elif ch=='5':
                 resetUserData()
             else:
@@ -242,8 +246,7 @@ def init():
             ch = input(">>> ")
             if ch == '1':
                 give_space()
-                SignIn(input("Email : "),input("Password : "))
-                # SignIn("yaviral17@gmail.com","ttest12345")
+                SignIn()
                 give_space()
             elif ch == '2':
                 SignUp()

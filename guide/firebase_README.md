@@ -1,5 +1,5 @@
-# Sollutions
-><b> if you are facing issues with database read and write than goto your firebase ptoject than realtime database than Rules than change the values of '.read' and '.write' to true and click on publish (ignore the warnMings)</b><br>
+# Solutions
+><b> If you are facing issues with database read and write then go to your firebase project then realtime database thaen Rules then change the values of '.read' and '.write' to true and click on publish (ignore the warnings)</b><br>
 
 # Requirements
 ><B> pyrebase module for python - <I><B>pip install pyrebase <br>

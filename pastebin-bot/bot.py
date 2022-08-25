@@ -1,5 +1,4 @@
 from API import API_KEY
-import telegram.ext
 import telebot
 import os, subprocess
 from request import file_writer, file_remover

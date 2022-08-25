@@ -1,3 +1,5 @@
+import time
+
 from API import API_KEY
 import telebot
 import os, subprocess
@@ -134,35 +136,16 @@ def handle_video_download_yt(message):
             "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏",
         )
         download_video(link_video)
-        bot.send_video(
-            chat_id, video=open(f"output.mp4", "rb"), supports_streaming=True
-        )
-        if os.path.exists(f"output.mp4"):
-            os.remove(f"output.mp4")
+        bot.send_video(chat_id, video=open("output.mp4", "rb"), supports_streaming=True)
+        time.sleep(50) # Alternate way, the problem occurs when file deletion, Better way to use Async await for this task
+        if os.path.exists("output.mp4"):
+            os.remove("output.mp4")
     except instaloader.ProfileNotExistsException:
         bot.reply_to(message, f"{link_video} is not Found")
     except instaloader.ConnectionException:
         bot.reply_to(message, "IP is Blocked Please Try After Some Time")
 
 
-# def video_download_yt(update, context):
-#     link_video = context.args[0]
-#     try:
-#         update.message.reply_text(
-#             "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏"
-#         )
-#         download_video(link_video)
-#         context.bot.send_video(
-#             chat_id=update.message.chat_id,
-#             video=open(f"output.mp4", "rb"),
-#             supports_streaming=True,
-#         )
-#         if os.path.exists(f"output.mp4"):
-#             os.remove(f"output.mp4")
-#     except instaloader.ProfileNotExistsException:
-#         update.message.reply_text(f"{link_video} is not Found")
-#     except instaloader.ConnectionException:
-#         update.message.reply_text("IP is Blocked Please Try After Some Time")
 
 
 if __name__ == "__main__":

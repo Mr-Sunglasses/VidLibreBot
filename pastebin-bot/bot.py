@@ -25,16 +25,21 @@ bot = telebot.TeleBot(API_KEY)
 
 
 # This Decorator handle's the message with and /start
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=["start"])
 def handle_start(message):
-    bot.reply_to(message, "Welcome to Open-Bot Powered by Open-Source and Developed by @thisiskanishkP")
+    bot.reply_to(
+        message,
+        "Welcome to Open-Bot Powered by Open-Source and Developed by @thisiskanishkP",
+    )
     bot.send_photo(chat_id=message.chat.id, photo=open("images/octocat.png", "rb"))
 
 
 # This Decorator helps in handling the message with /help
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=["help"])
 def handle_help(message):
-    bot.reply_to(message, """\
+    bot.reply_to(
+        message,
+        """\
     The Following Commands can we user
 
      /start - to say welcome message
@@ -46,11 +51,12 @@ def handle_help(message):
      /love_quote_happy - for romantic quotes [happy]
      /love_quote_sad - for romantic quotes [sad]
      /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]\
-    """)
+    """,
+    )
 
 
 # This Decorator helps in handling the message with /paste
-@bot.message_handler(commands=['paste'])
+@bot.message_handler(commands=["paste"])
 def handle_paste(message):
     chat_id = message.chat.id
     data = message.text
@@ -63,7 +69,7 @@ def handle_paste(message):
     file_remover()
 
 
-@bot.message_handler(commands=['pic'])
+@bot.message_handler(commands=["pic"])
 def handle_pic(message):
     chat_id = message.chat.id
     data = message.text
@@ -71,18 +77,22 @@ def handle_pic(message):
     print(username)
     try:
         profile_downloader(username=username)
-        bot.reply_to(message,
-                     f"Please wait while we are sending you the profile pic of {username} \n Don't worry it will take a minute or so 🤝")
+        bot.reply_to(
+            message,
+            f"Please wait while we are sending you the profile pic of {username} \n Don't worry it will take a minute or so 🤝",
+        )
         for root, subdirs, files in os.walk(username):
             for file in files:
                 if os.path.splitext(file)[1].lower() in (".jpg", ".jpeg"):
-                    bot.send_photo(chat_id, photo=open(f"{os.path.join(root, file)}", "rb"))
+                    bot.send_photo(
+                        chat_id, photo=open(f"{os.path.join(root, file)}", "rb")
+                    )
                     profile_delete(username=username)
     except:
         bot.reply_to(message, f"{username} is not found")
 
 
-@bot.message_handler(commands=['qr'])
+@bot.message_handler(commands=["qr"])
 def handle_qr(message):
     chat_id = message.chat.id
     text = message.text
@@ -96,38 +106,44 @@ def handle_qr(message):
         delete_qr()
 
 
-@bot.message_handler(commands=['quote'])
+@bot.message_handler(commands=["quote"])
 def handle_quote(message):
     chat_id = message.chat.id
     preload_quotes()
     bot.reply_to(message, f"{quotes[randint(0, 9)]}")
 
 
-@bot.message_handler(commands=['love_quote_happy'])
+@bot.message_handler(commands=["love_quote_happy"])
 def handle_love_quote_happy(message):
     bot.reply_to(message, f"❤️ {happy_love_quotes[randint(0, 22)]}")
 
 
-
-@bot.message_handler(commands=['love_quote_sad'])
+@bot.message_handler(commands=["love_quote_sad"])
 def handle_love_quote_sad(message):
     bot.reply_to(message, f"❤️ {sad_love_quotes[randint(0, 22)]}")
 
-@bot.message_handler(commands=['yt_dl'])
+
+@bot.message_handler(commands=["yt_dl"])
 def handle_video_download_yt(message):
     chat_id = message.chat.id
     data = message.text
     link_video = data[7::]
     try:
-        bot.send_message(chat_id, "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏")
+        bot.send_message(
+            chat_id,
+            "Please wait while the Video is Downloading, It may take 3-5 minutes to download a 20 mb video 🙏",
+        )
         download_video(link_video)
-        bot.send_video(chat_id, video=open(f"output.mp4", "rb"), supports_streaming=True)
+        bot.send_video(
+            chat_id, video=open(f"output.mp4", "rb"), supports_streaming=True
+        )
         if os.path.exists(f"output.mp4"):
             os.remove(f"output.mp4")
     except instaloader.ProfileNotExistsException:
         bot.reply_to(message, f"{link_video} is not Found")
     except instaloader.ConnectionException:
         bot.reply_to(message, "IP is Blocked Please Try After Some Time")
+
 
 # def video_download_yt(update, context):
 #     link_video = context.args[0]

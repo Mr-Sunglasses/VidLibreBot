@@ -137,15 +137,15 @@ def handle_video_download_yt(message):
         )
         download_video(link_video)
         bot.send_video(chat_id, video=open("output.mp4", "rb"), supports_streaming=True)
-        time.sleep(50) # Alternate way, the problem occurs when file deletion, Better way to use Async await for this task
+        time.sleep(
+            50
+        )  # Alternate way, the problem occurs when file deletion, Better way to use Async await for this task
         if os.path.exists("output.mp4"):
             os.remove("output.mp4")
     except instaloader.ProfileNotExistsException:
         bot.reply_to(message, f"{link_video} is not Found")
     except instaloader.ConnectionException:
         bot.reply_to(message, "IP is Blocked Please Try After Some Time")
-
-
 
 
 if __name__ == "__main__":

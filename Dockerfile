@@ -1,7 +1,11 @@
 FROM python:3.9
 
-ADD pastebin-bot/bot.py .
+WORKDIR /code
 
-RUN pip install -r requriments.txt
+COPY ./requriments.txt /code/requriments.txt
 
-CMD ["python", "./bot.py"]
+RUN pip install --no-cache-dir --upgrade -r /code/requriments.txt
+
+COPY ./pastebin-bot /code/pastebin-bot
+
+CMD ["python", ".pastebin-bot/bot.py"]

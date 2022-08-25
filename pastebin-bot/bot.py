@@ -71,6 +71,7 @@ def handle_paste(message):
     file_remover()
 
 
+# This Decorator helps in handling the message with /pic
 @bot.message_handler(commands=["pic"])
 def handle_pic(message):
     chat_id = message.chat.id
@@ -94,6 +95,7 @@ def handle_pic(message):
         bot.reply_to(message, f"{username} is not found")
 
 
+# This Decorator helps in handling the message with /qr
 @bot.message_handler(commands=["qr"])
 def handle_qr(message):
     chat_id = message.chat.id
@@ -108,6 +110,7 @@ def handle_qr(message):
         delete_qr()
 
 
+# This Decorator helps in handling the message with /quote
 @bot.message_handler(commands=["quote"])
 def handle_quote(message):
     chat_id = message.chat.id
@@ -115,16 +118,19 @@ def handle_quote(message):
     bot.reply_to(message, f"{quotes[randint(0, 9)]}")
 
 
+# This Decorator helps in handling the message with /love_quote_happy
 @bot.message_handler(commands=["love_quote_happy"])
 def handle_love_quote_happy(message):
     bot.reply_to(message, f"❤️ {happy_love_quotes[randint(0, 22)]}")
 
 
+# This Decorator helps in handling the message with /love_quote_sad
 @bot.message_handler(commands=["love_quote_sad"])
 def handle_love_quote_sad(message):
     bot.reply_to(message, f"❤️ {sad_love_quotes[randint(0, 22)]}")
 
 
+# This Decorator helps in handling the message with /yt_dl
 @bot.message_handler(commands=["yt_dl"])
 def handle_video_download_yt(message):
     chat_id = message.chat.id

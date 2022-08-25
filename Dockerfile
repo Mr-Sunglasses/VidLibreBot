@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requriments.txt
 
 COPY ./pastebin-bot /code/pastebin-bot
 
-CMD ["python", ".pastebin-bot/bot.py"]
+CMD ["python", "/code/pastebin-bot/bot.py"]

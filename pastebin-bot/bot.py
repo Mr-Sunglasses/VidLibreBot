@@ -155,7 +155,7 @@ def handle_video_download_yt(message):
         bot.reply_to(message, "IP is Blocked Please Try After Some Time")
 
 # This Decorator Deals with /short
-@bot.message_handler(commands=["/short"])
+@bot.message_handler(commands=["short"])
 def handle_short(message):
     chat_id = message.chat.id
     data = message.text

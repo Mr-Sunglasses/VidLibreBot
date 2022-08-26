@@ -11,7 +11,7 @@ from random import randint
 from love_quotes import happy_love_quotes, sad_love_quotes
 from yt_download_shorts import download_video, get_title
 import instaloader
-
+from link_shortner import short
 bot = telebot.TeleBot(API_KEY)
 
 # TBD
@@ -52,7 +52,8 @@ def handle_help(message):
      /quote - for getting random quotes
      /love_quote_happy - for romantic quotes [happy]
      /love_quote_sad - for romantic quotes [sad]
-     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]\
+     /yt_dl <link of youtube video> - to download a youtube video.......[it may take sometime to download a youtube video so chill]
+     /short <link> - To shorten the link\
     """,
     )
 
@@ -153,6 +154,16 @@ def handle_video_download_yt(message):
     except instaloader.ConnectionException:
         bot.reply_to(message, "IP is Blocked Please Try After Some Time")
 
+# This Decorator Deals with /short
+@bot.message_handler(commands=["/short"])
+def handle_short(message):
+    chat_id = message.chat.id
+    data = message.text
+    payload_link_data = data[7::]
+    try:
+        bot.reply_to(message, f"{short(payload_link_data)}")
+    except:
+        bot.reply_to(message, f"We can't abel to short{payload_link_data}")
 
 if __name__ == "__main__":
     bot.infinity_polling()

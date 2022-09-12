@@ -116,7 +116,7 @@ def handle_qr(message):
 def handle_quote(message):
     chat_id = message.chat.id
     preload_quotes()
-    bot.reply_to(message, f"{quotes[randint(0, 9)]}")
+    bot.reply_to(message, f"{quotes[0]}")
 
 
 # This Decorator helps in handling the message with /love_quote_happy

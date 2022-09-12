@@ -4,21 +4,22 @@ import threading
 import requests
 from random import randint
 
-api = "http://api.quotable.io/random"
+api = "https://api.api-ninjas.com/v1/quotes?category="
 quotes = []
 quote_number = 0
 
 
 def preload_quotes():
     global quotes
+    quotes.clear()
+    
+    randon_quote = requests.get(api, headers={'X-Api-Key': 'ZSVhux9848gfWCCCLMlESQ==UwDZ4yCxgj0irhQu'}).json()
+    content = randon_quote[0]
+    author = content["author"]
+    quote = content["quote"] + "\n\n" + "By " + author
+    quotes.append(quote)
 
-    for x in range(10):
-        randon_quote = requests.get(api).json()
-        content = randon_quote["content"]
-        author = randon_quote["author"]
-        quote = content + "\n\n" + "By" + author
-        quotes.append(quote)
-
+#print(quotes[0])
 
 # preload_quotes()
 #

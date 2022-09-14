@@ -12,14 +12,17 @@ quote_number = 0
 def preload_quotes():
     global quotes
     quotes.clear()
-    
-    randon_quote = requests.get(api, headers={'X-Api-Key': 'ZSVhux9848gfWCCCLMlESQ==UwDZ4yCxgj0irhQu'}).json()
+
+    randon_quote = requests.get(
+        api, headers={"X-Api-Key": "ZSVhux9848gfWCCCLMlESQ==UwDZ4yCxgj0irhQu"}
+    ).json()
     content = randon_quote[0]
     author = content["author"]
     quote = content["quote"] + "\n\n" + "By " + author
     quotes.append(quote)
 
-#print(quotes[0])
+
+# print(quotes[0])
 
 # preload_quotes()
 #

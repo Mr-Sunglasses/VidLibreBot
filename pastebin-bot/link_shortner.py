@@ -10,7 +10,7 @@ def short(url: str):
     headers = {
         "content-type": "application/x-www-form-urlencoded",
         "X-RapidAPI-Key": "e02923797dmshddea57448263f98p13ab17jsn9e252949aa6f",
-        "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com"
+        "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com",
     }
     response = requests.request("POST", url, data=payload, headers=headers)
     x = dict(response.json())
@@ -18,5 +18,3 @@ def short(url: str):
     for i in x.values():
         return_link = i
     return return_link
-
-

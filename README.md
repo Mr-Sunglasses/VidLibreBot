@@ -76,4 +76,19 @@ Run Through Docker
 
 docker build -t container_name .
 
-ocker run -e TOKEN=TELEGRAM_BOT_TOKEN -e username=INTA_USER-NAME -e password=INSTA_PASSWORD container_name:latest
+docker run -e TOKEN=TELEGRAM_BOT_TOKEN -e username=INTA_USER-NAME -e password=INSTA_PASSWORD container_name:latest
+
+## 💪 Thanks to all Wonderful Contributors
+
+Thanks a lot for spending your time helping AutoType grow.   
+Thanks a lot! Keep rocking 🍻
+
+[![Contributors](https://contrib.rocks/image?repo=Mr-Sunglasses/pastebin-telegram)](https://github.com/Mr-Sunglasses/pastebin-telegram/graphs/contributors)
+
+## 🙏 Support++
+
+This project needs your shiny star ⭐.   
+Don't forget to leave a star ⭐️
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)  [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+

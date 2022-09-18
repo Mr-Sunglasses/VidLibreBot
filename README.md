@@ -80,7 +80,7 @@ docker run -e TOKEN=TELEGRAM_BOT_TOKEN -e username=INTA_USER-NAME -e password=IN
 
 ## 💪 Thanks to all Wonderful Contributors
 
-Thanks a lot for spending your time helping AutoType grow.   
+Thanks a lot for spending your time helping Pastebin-Telegram grow.   
 Thanks a lot! Keep rocking 🍻
 
 [![Contributors](https://contrib.rocks/image?repo=Mr-Sunglasses/pastebin-telegram)](https://github.com/Mr-Sunglasses/pastebin-telegram/graphs/contributors)

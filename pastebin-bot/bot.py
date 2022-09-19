@@ -104,7 +104,7 @@ def handle_pic(message):
 def handle_insta(message):
     chat_id = message.chat.id
     data = message.text
-    username = data[5::]
+    username = data[6::]
     try:
         task = threading.Thread(target=fetch_posts, args=(username,))
         task.start()

@@ -1,4 +1,4 @@
-from instaloader import Instaloader,Profile
+from instaloader import Instaloader, Profile
 import threading
 import shutil
 import os
@@ -9,11 +9,12 @@ load_dotenv()
 
 profile_instance = Instaloader()
 
+
 def login(profile):
     name = os.getenv("username")
     passw = os.getenv("password")
-    profile.login(name,passw)
-    
+    profile.login(name, passw)
+
 
 def fetch_posts(user):
 
@@ -25,11 +26,16 @@ def fetch_posts(user):
         posts = prof.get_posts()
     except:
         raise FileNotFoundError
-    
 
     for post in posts:
         try:
-            task = threading.Thread(target=profile_instance.download_post, args=(post,user,))
+            task = threading.Thread(
+                target=profile_instance.download_post,
+                args=(
+                    post,
+                    user,
+                ),
+            )
             task.start()
         except:
             print("Skipping due to status code 401")

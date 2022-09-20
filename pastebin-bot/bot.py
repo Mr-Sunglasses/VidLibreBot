@@ -5,7 +5,7 @@ import telebot
 import os, subprocess, threading
 from request import file_writer, file_remover
 from insta_profile import profile_downloader, profile_delete
-from insta_all_pictures import fetch_posts,profile_delete
+from insta_all_pictures import fetch_posts, profile_delete
 from qr_generator import generate_qr, delete_qr
 from quotes import preload_quotes, quotes
 from random import randint
@@ -109,20 +109,21 @@ def handle_insta(message):
         task = threading.Thread(target=fetch_posts, args=(username,))
         task.start()
         bot.reply_to(
-            message,f'Getting posts of {username} for you. \nPlease wait for a moment.'
+            message, f"Getting posts of {username} for you. \nPlease wait for a moment."
         )
         task.join()
-        for root,subdirs,files in os.walk(username, topdown=False):
+        for root, subdirs, files in os.walk(username, topdown=False):
             for file in files:
                 if os.path.splitext(file)[1].lower() in (".jpg", ".jpeg"):
                     bot.send_photo(
                         chat_id, photo=open(f"{os.path.join(root, file)}", "rb")
                     )
-                    
+
         profile_delete(username=username)
 
     except FileNotFoundError:
         bot.reply_to(message, f"{username} is not found")
+
 
 # This Decorator helps in handling the message with /qr
 @bot.message_handler(commands=["qr"])
@@ -193,8 +194,6 @@ def handle_short(message):
         bot.reply_to(message, f"{short(payload_link_data)}")
     except:
         bot.reply_to(message, f"We can't abel to short{payload_link_data}")
-
-
 
 
 if __name__ == "__main__":

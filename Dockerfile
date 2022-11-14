@@ -2,9 +2,9 @@ FROM python:3.9
 
 WORKDIR /code
 
-COPY ./reverse_requirement.txt /code/reverse_requirement.txt
+COPY ./requriments.txt /code/requriments.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/reverse_requirement.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requriments.txt
 
 COPY ./pastebin-bot /code/pastebin-bot
 

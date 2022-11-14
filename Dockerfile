@@ -4,7 +4,7 @@ WORKDIR /code
 
 COPY ./requriments.txt /code/requriments.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requriments.txt
+RUN pip install --no-cache-dir --upgrade -r /code/reverse_requirement.txt
 
 COPY ./pastebin-bot /code/pastebin-bot
 

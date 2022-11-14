@@ -2,7 +2,7 @@ FROM python:3.9
 
 WORKDIR /code
 
-COPY ./requriments.txt /code/requriments.txt
+COPY ./reverse_requirement.txt /code/reverse_requirement.txt
 
 RUN pip install --no-cache-dir --upgrade -r /code/reverse_requirement.txt
 
